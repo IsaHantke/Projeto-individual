@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index1.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+      <!-- Início Header-->
+      <div class="header"> 
+        
+        <div class="div_logohog"> <img class="img1" src="assets/imgs/logo1.png"> </div>
+           
+        <h1 class="titulo"> Wizards </h1>
+
+        <div class="container"> 
+
+            
+       
+            <ul class="navbar">
+            <div class="homeindex"> <li> Home </li> </div> 
+             <li> <a class="refsobrenos" href="#quemsomos"> O castelo </a> </li>
+             <li> <a href="SimuladorFinanceiro.html" class="homesimulador"> Explore </a> </li>
+             <li> <a href="#contato2" class="refcontato"> Casas </a> </li>
+            
+             <div class="login"> <li> <a class="reflogin" href="login.html"> Login </a> </li> </div> 
+             
+             <div class="cadastro"> <li> <a class="refcadastro" href="cadastro.html"> Cadastro </a> </li> </div> &nbsp;
+        </ul>
+        
+        
+      
+        </div>
+    </div>
+
+    <div class="espacamento"> </div>
+
+    <!-- Final Header-->
+
+<!-- COMEÇO FUNDO 1-->
+
+<div class="slider">
+    <div class="slides">
+        <!--Radio Buttons-->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <!--Fim Radio Buttons-->
+
+        <!--Slide images-->
+        <div class="slide first">
+            <img src="assets/imgs/Frame1.png" alt="Imagem 1">
+        </div>
+
+        <div class="slide ">
+             <a href="agendamento.html"><img src="assets/imgs/Frame2.png" alt="Imagem 2"></a>
+            
+        </div>
+
+        <div class="slide ">
+        <a href="cadastro.html"><img src="assets/imgs/Frame3.png" alt="Imagem 3" href="cadastro.html"></a>	
+        </div>
+
+        <div class="slide ">
+        <a href="calculadora.html"><img src="assets/imgs/Frame4.png" alt="Imagem 4" href="calculadora.html"></a>	
+        </div>
+
+
+        <!--Fim Slide images-->
+
+        <!--Navigation auto-->
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+
+    </div>
+
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+    </div>
+</div>
+
+</div>
+
+    <!-- FINAL  FUNDO 1-->
+
+    <div class="second">
+    </div>
+</body>
+</html>
+
+<!--Inicio do Script Slider-->
+<script>
+	let count = 1;
+	document.getElementById("radio1").checked = true;
+
+	setInterval(function () {
+		nextImagem();
+	}, 5000)
+
+	function nextImagem() {
+		count++;
+		if (count > 4) {
+			count = 1;
+		}
+
+		document.getElementById("radio" + count).checked = true;
+	}
+</script>
+<!--Fim do Script Slider-->
