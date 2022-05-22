@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    font-family: monospace;
+    margin: 0%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    overflow-x: hidden;
 }
 
@@ -9,23 +9,15 @@ html{ scroll-behavior: smooth;}
 /* COMEÇO DA HEADER */
 
 .header {
-    width: 100%;
-    height: 100px;
+    width: 100vw;
+    height: 12vh;
     background-color: black;
     display: flex;
     align-items: center;
-    border-bottom: 3px solid #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    border-bottom: 0.4vh solid #ffffff;
+    
 }
 
-.espacamento {     /* coloquei essa div para a header fixa não "comer" a debaixo, assim criando uma div "fantasma" */
-    width: 100%;   /* que empurra a debaixo, fazendo ficar certinho, outra opção era colocar margintop na div debaixo */           
-    height: 100px;
-    background-color: #497320;
-}
 
 .container {
     width: 85%;
@@ -34,65 +26,153 @@ html{ scroll-behavior: smooth;}
  }
 
  .div_logohog {
-     width: 90px;
-     height: 80px;
-     margin-left: 10px;
+     width: 50vw;
+     height: 11vh;
+     margin-left: 1vw;
    
  }
 
  .div_logohog .img1 {
-     width: 100%;
-     height: 100%;
+     width: 15vw;
+     height: 11vh;   
  }
 
- .titulo {
-    color: white;
-    margin-left: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   
-    
-}
+ .div_logohog .img1:hover {
+     transform: scale(1.06);
+     transition: 0.3;
+ }
 
  .header .container {
      justify-content: center;
      align-items: center ;
-     height: 100%;
+     height: 100vh;
  }
 
  .navbar {
-     color: white;
+     color: #a0a0a0;
      list-style: none;
-     width: 900px;
-     height: 50px;
+     width: 80vw;
+     height: 50vh;
      display: flex;
      justify-content: space-between;
      align-items: center;
-     font-family: monospace;
-     font-size: 15px;
-     margin-left: 360px;
- 
-}
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     letter-spacing: 0.02vw;
+     font-size: 2vh;
+     margin-left: 5vw;
+    
+}   
 
-.navbar li {
-     margin-right: 40px;
-     font-weight: bold;
+/* aquela linha debaixo do menu quando passamos o mouse */
+
+.teamfight::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
     
 }
 
+.homesimulador:hover {
+    color: white;
+}
+
+.teamfight:hover::after {
+    width: 100%;
+}
+
+.refcontato::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.refcontato:hover {
+    color: white;
+}
+
+.refcontato:hover::after {
+    width: 100%;
+}
+
+.refhome1::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.refhome1:hover {
+    color: white;
+}
+
+.refhome1:hover::after {
+    width: 100%;
+}
+
+.refsobrenos::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+/* para ele iluminar quando passa o mouse */
+
+.refsobrenos:hover {
+    color: white;
+}
+.refsobrenos:hover::after {
+    width: 100%;
+}
+
+
+
+/* FIM da linha animada */
+
+.navbar li {
+     margin-right: 4vw;
+     font-weight: bold;
+}
+
+
+
 .navbar .login {
-    margin-right: 30px;
+    margin-right: 2vw;
     display: flex;
     align-items: center;
 }
 
+.navbar .login:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
 .login {
-    width: 60px;
-    height: 40px;
+    width: 4vw;
+    height: 6vh;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    border: 3px solid white;
-    border-radius: 8px;
+    padding-left: 1.5vw;
+    border: 0.4vh solid white;
+    border-radius: 8vh;
     
 }
 
@@ -101,13 +181,18 @@ html{ scroll-behavior: smooth;}
     text-decoration: none;
 }
 
+.reflogin:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
 .refcontato {
-    color: white;
+    color: #a0a0a0;
     text-decoration: none;
 }
 
 .refsobrenos {
-    color: white;
+    color: #a0a0a0;
     text-decoration: none;
 }
 
@@ -117,145 +202,148 @@ html{ scroll-behavior: smooth;}
 }
 
 .cadastro {
-    width: 60px;
-    height: 40px;
+    width: 4vw;
+    height: 6vh;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 3px solid white;
-    border-radius: 8px;
+    padding-left: 1.9vh;
+    padding-right: 1.9vh;
+    border: 0.4vh solid white;
+    border-radius: 8vh;
     text-decoration: none;
-    margin-right: 6px;
+    margin-right: 2vw;
 }
+.navbar .summoners:hover {
+     transform: scale(1.06);
+     transition: 0.5s;
+}
+
+.navbar .teamfight:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.navbar .competitivo:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.navbar .refhome1:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+.navbar .cadastro:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
 
 .refcadastro {
     color: white;
     text-decoration: none;
 }
 
+
+
 .homesimulador {
-    color: white;
+    color: #a0a0a0;
     text-decoration: none;
-    
 }
 
 /* PRIMEIRO FUNDO */
 
-.slider{
-    height: 90vh;
+.fundo1 {
     width: 100vw;
-    overflow: hidden;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    justify-content: center;
-    
-}
-
-.slides{
-    width: 400%;
-    height: 400px;
-    display: flex;
-    
-}
-.slides input{
-    display: none;
-}
-
-.slide{
-    width: 100vw;
-    height: 90vh;
+    background-image: url(fundo1-_video-converter.com_.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
-    transition: 2s;
+    filter: blur(3px);
 }
-
-.slide img{
-    width: 100%;
-    height: 100%;
-}
-
-.manual-navigation{
-    position: relative;
-    margin-top: 150px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn{
-    border: 2px solid #ffffff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-
-.manual-btn:hover{
-    background-color: #ffffff;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-#radio2:checked ~ .first{
-    margin-left: -25%;
-}
-#radio3:checked ~ .first{
-    margin-left: -50%;
-}
-#radio4:checked ~ .first{
-    margin-left: -75%;
-}
-
-.navigation-auto div{
-    border: 2px solid rgb(0, 0, 0);
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.navigation-auto{
+.back01 {
+    border: #e6e6e6 solid 3vh;
+    background-color: #e6e6e6;
+    width: 65vw;
+    height:60vh;
+    z-index: 900;
     position: absolute;
-    width: 100%;
-    margin-top: 550px;
+    margin-top: 21vh;
+    margin-left: 18vw;
+    border-radius: 3vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-.navigation-auto div:not(:last-child){
-    margin-right: 40px;
+.img2 {
+    width: 25vw;
+    height: 27vh;
+    border-radius: 20vh;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background-color: #ffffff;
+.textobanner {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background-color: #ffffff;
+
+.btncadastro {
+    text-decoration: none;
+    color: white;
 }
 
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background-color: #ffffff;
+
+.button-51 {
+  font-size: 2vh;
+  font-weight: 200;
+  letter-spacing: 0.2vh;
+  padding: 1.3vh 2.0vw 2vh;
+  outline: 0;
+  border: 0.2vh solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background-color: #ffffff;
+.button-51:after {
+  content: "";
+  background-color: #6DCFF6;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 0.4vw;
+  left: 0.5vw;
+  transition: 0.2s;
 }
 
-/* Fim slider */
+.button-51:hover:after {
+  top: 0vw;
+  left: 0vw;
+}
+
+
+/* Fim do primeiro fundo */
+
+/* COMEÇO SEGUNDO FUNDO */
+
+.fundo2 {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid black;
+}
+
+
 
 
 /* SEGUNDO FUNDO */
 
-.second {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
