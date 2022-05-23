@@ -1,7 +1,9 @@
+
 body {
-    margin: 0%;
+    padding: 0;
+    margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* fazer ele rolar para baixo devagar*/ 
@@ -35,11 +37,6 @@ html{ scroll-behavior: smooth;}
  .div_logohog .img1 {
      width: 15vw;
      height: 11vh;   
- }
-
- .div_logohog .img1:hover {
-     transform: scale(1.06);
-     transition: 0.3;
  }
 
  .header .container {
@@ -337,13 +334,342 @@ html{ scroll-behavior: smooth;}
 .fundo2 {
     width: 100vw;
     height: 100vh;
-    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* div com borda animada */
+.box1 {
+    margin-top: 15vh;
+    margin-left: 4vw;
+    background-color: #e6e6e6;
+    border-radius: 5vw;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    box-shadow: inset 0 0 2em black;
+}
+
+.text1 {
+    width: 70vw;
+    height: 50vh;
+    letter-spacing: 0.02vw;
 }
 
 
 
 
-/* SEGUNDO FUNDO */
+/* TERCEIRO FUNDO */
 
+.fundo3 {
+    border: 2PX black solid;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.part2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2PX rgb(223, 67, 67) solid;
+    width: 100vw;
+    height: 60vh;
+}
 
+/* box rotativo 1 */
+.box2 {
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  width: 26vw;
+  height: 55vh;
+  overflow: hidden;
+}
+
+.box2::before {
+    content: '';
+    position: absolute;
+    inset: -10px 140px;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+
+.box2:hover::before {
+    inset: -20px 0px;
+}
+
+@keyframes animate {
+    0% 
+    {
+     transform: rotate(0deg);
+    }
+    100% 
+    {
+     transform: rotate(360deg);
+    }
+}
+
+.box2::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    inset: 30px;
+    border: 6px solid black;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content .srimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none ;
+}
+
+.box2:hover .content .srimg {
+    opacity: 0;
+}
+
+ .titulo3 {
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+    border-bottom: 0.1vh white solid;
+}
+
+.subtitulo3 {
+    text-align: center;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.refbox1 {
+    text-align: center;
+    width: 6vw;
+    height: 3vh ;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius:5%;
+}
+
+/* box rotativo 2 */
+
+.box3 {
+    position: relative;
+    margin-left: 5vw;
+    background-color: white;
+    border-radius: 50%;
+    width: 26vw;
+    height: 55vh;
+    overflow: hidden;
+  }
+  
+  .box3::before {
+      content: '';
+      position: absolute;
+      inset: -10px 140px;
+      background: linear-gradient(315deg, #00ccff, #d400d4);
+      transition: 0.5s;
+      animation: animate2 4s linear infinite;
+  }
+  
+  .box3:hover::before {
+      inset: -20px 0px;
+  }
+  
+  @keyframes animate2 {
+      0% 
+      {
+       transform: rotate(0deg);
+      }
+      100% 
+      {
+       transform: rotate(360deg);
+      }
+  }
+  
+  .box3::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+  }
+  
+  .content3 {
+      position: absolute;
+      inset: 30px;
+      border: 6px solid black;
+      z-index: 3;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .content3 .tftimg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+      pointer-events: none ;
+  }
+  
+  .box3:hover .content3 .tftimg {
+      opacity: 0;
+  }
+  
+   .titulo4 {
+      text-align: center;
+      font-size: 25px;
+      color: #ffffff;
+      border-bottom: 0.1vh white solid;
+  }
+  
+  .subtitulo4 {
+      text-align: center;
+      font-size: 10px;
+      color: #ffffff;
+  }
+  
+  .refbox2 {
+      text-align: center;
+      width: 6vw;
+      height: 3vh ;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      background-color: white;
+      border-radius:5%;
+  }
+
+  /* Box rotativo 4 */
+
+  .box3 {
+    position: relative;
+    margin-left: 5vw;
+    background-color: white;
+    border-radius: 50%;
+    width: 26vw;
+    height: 55vh;
+    overflow: hidden;
+  }
+  
+  .box3::before {
+      content: '';
+      position: absolute;
+      inset: -10px 140px;
+      background: linear-gradient(315deg, #00ccff, #d400d4);
+      transition: 0.5s;
+      animation: animate2 4s linear infinite;
+  }
+  
+  .box3:hover::before {
+      inset: -20px 0px;
+  }
+  
+  @keyframes animate2 {
+      0% 
+      {
+       transform: rotate(0deg);
+      }
+      100% 
+      {
+       transform: rotate(360deg);
+      }
+  }
+  
+  .box3::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+  }
+  
+  .content3 {
+      position: absolute;
+      inset: 30px;
+      border: 6px solid black;
+      z-index: 3;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .content3 .tftimg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+      pointer-events: none ;
+  }
+  
+  .box3:hover .content3 .tftimg {
+      opacity: 0;
+  }
+  
+   .titulo4 {
+      text-align: center;
+      font-size: 25px;
+      color: #ffffff;
+      border-bottom: 0.1vh white solid;
+  }
+  
+  .subtitulo4 {
+      text-align: center;
+      font-size: 10px;
+      color: #ffffff;
+  }
+  
+  .refbox2 {
+      text-align: center;
+      width: 6vw;
+      height: 3vh ;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      background-color: white;
+      border-radius:5%;
+  }
