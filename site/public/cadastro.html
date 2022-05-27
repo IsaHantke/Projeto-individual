@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LOL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="css/cadastro.css">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <!-- Início Header-->
+    <div class="header">
+
+        <div class="div_logohog"> <img class="img1"
+                src="https://www.leagueoflegends.com/static/logo-1200-589b3ef693ce8a750fa4b4704f1e61f2.png"> </div>
+
+
+        <div class="container">
+
+
+
+            <ul class="navbar">
+                <div class="homeindex">
+                    <li class="refhome1"> <a class="refhomeee" href="index1.html">  Home </a> </li>
+                </div>
+                <li class="summoners"> <a class="refsobrenos" href="summonersrift.html"> Summoners Rift </a> </li>
+                <li class="teamfight"> <a href="Teamfight.html" class="homesimulador"> Teamfight Tactics </a>
+                </li>
+                <li class="competitivo"> <a href="competitivo.html" class="refcontato"> Competitivo </a> </li>
+
+                <div class="login">
+                    <li> <a class="reflogin" href="login.html"> Login </a> </li>
+                </div>
+
+                <div class="cadastro">
+                    <li> <a class="refcadastro" href="cadastro.html"> Cadastro </a> </li>
+                </div> &nbsp;
+            </ul>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="espaco"> </div>
+
+<!-- Final Header-->
+
+  <!-- COMEÇO FUNDO 1-->
+
+  <div class="back01">
+    <img class="img2" src="https://www.logolynx.com/images/logolynx/c4/c4c7ef6e78f1bc9a2cb2156c7f9033bd.jpeg">
+    <br>
+    <div class="formulario">
+
+        <!--
+             Para inserir mais um campo, copie uma das inputs abaixo.
+             Assim que inserir vá para o script abaixo.
+         -->
+
+        <span class="tipo_campo">Nome:</span>
+        <input id="nome_input" class="caixa" type="text" placeholder="Seu nome">
+        <br>
+        <span class="tipo_campo">E-mail:</span>
+        <input id="email_input" class="caixa" type="text" placeholder="meuemail@provedor.com">
+        <br>
+        <span class="tipo_campo">Senha:</span>
+        <input id="senha_input" class="caixa" type="password" placeholder="******">
+        <br>
+        <span class="tipo_campo">Confirmação da Senha:</span>
+        <input id="confirmacao_senha_input" class="caixa" type="password" placeholder="******">
+        <br>
+        <select class="select_champ">
+            <option hidden value="">  Escolha um campeão </option>
+            <option value="Jax"> Jax </option>
+            <option value="Viktor"> Viktor </option>
+            <option value="Thresh"> Thresh </option>
+            <option value="Master yi"> Master yi </option>
+            <option value="Ashe"> Ashe </option>
+            <option value="Shaco"> Shaco </option>
+            <option value="Nasus"> Nasus</option>
+            <option value="Zoe"> Zoe </option>
+            <option value="Le Blanc"> Le Blanc</option>
+            <option value="Miss Fortune"> Miss Fortune</option>
+        </select>
+
+        <p> Você é um robô? <br> 
+              5 x 5 = ?
+        </P>
+        <input id="captcha" placeholder="Coloque o resultado:"> 
+        
+
+
+    </div>
+    <br>
+
+    <a class="btncadastro"><button class="button-51" role="button" onclick="cadastrar()"> Cadastre-se </button> </a>
+
+</div>
+
+<div class="fundo1">
+       
+
+</div>
+
+
+<!-- FINAL  FUNDO 1-->
+    </body>
+    </html>
+
+    <script>
+        function cadastrar() {
+            aguardar();
+    
+            //Recupere o valor da nova input pelo nome do id
+            // Agora vá para o método fetch logo abaixo
+            var nomeVar = nome_input.value;
+            var emailVar = email_input.value;
+            var senhaVar = senha_input.value;
+            var captchaVar = Number(captcha.value)
+            var campeaoVar = campeao_input.value;
+            var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    
+            if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || campeaoVar == "") && (captchaVar != 25)) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    
+                finalizarAguardar();
+                return false;
+            }
+            else {
+                setInterval(sumirMensagem, 5000)
+            }
+    
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+    
+                console.log("resposta: ", resposta);
+    
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+    
+                    mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+    
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000")
+                    
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+    
+            return false;
+        }
+    
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        }
+    
+    </script>
+
+
+
+
+

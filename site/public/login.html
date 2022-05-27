@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LOL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="css/login.css">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <!-- Início Header-->
+    <div class="header">
+
+        <div class="div_logohog"> <img class="img1"
+                src="https://www.leagueoflegends.com/static/logo-1200-589b3ef693ce8a750fa4b4704f1e61f2.png"> </div>
+
+
+        <div class="container">
+
+
+
+            <ul class="navbar">
+                <div class="homeindex">
+                    <li class="refhome1"> <a class="refhomeee" href="index1.html">  Home </a> </li>
+                </div>
+                <li class="summoners"> <a class="refsobrenos" href="summonersrift.html"> Summoners Rift </a> </li>
+                <li class="teamfight"> <a href="Teamfight.html" class="homesimulador"> Teamfight Tactics </a>
+                </li>
+                <li class="competitivo"> <a href="competitivo.html" class="refcontato"> Competitivo </a> </li>
+
+                <div class="login">
+                    <li> <a class="reflogin" href="login.html"> Login </a> </li>
+                </div>
+
+                <div class="cadastro">
+                    <li> <a class="refcadastro" href="cadastro.html"> Cadastro </a> </li>
+                </div> &nbsp;
+            </ul>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="espaco"> </div>
+
+<!-- Final Header-->
+
+  <!-- COMEÇO FUNDO 1-->
+
+  <div class="back01">
+    <img class="img2" src="https://www.logolynx.com/images/logolynx/c4/c4c7ef6e78f1bc9a2cb2156c7f9033bd.jpeg">
+    <br>
+    <div class="formulario">
+
+        <!--
+             Para inserir mais um campo, copie uma das inputs abaixo.
+             Assim que inserir vá para o script abaixo.
+         -->
+        <span class="tipo_campo">E-mail:</span>
+        <input id="email_input" class="caixa" type="text" placeholder="meuemail@provedor.com">
+        <br>
+        <span class="tipo_campo">Senha:</span>
+        <input id="senha_input" class="caixa" type="password" placeholder="******">
+        <br>
+        
+
+
+    </div>
+    <br>
+
+    <a class="btncadastro"><button class="button-51" role="button" onclick="cadastrar()"> Cadastre-se </button> </a>
+
+</div>
+
+<div class="fundo1">
+       
+
+</div>
+
+
+<!-- FINAL  FUNDO 1-->
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
