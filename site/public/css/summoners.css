@@ -1,4 +1,3 @@
-
 body {
     padding: 0;
     margin: 0;
@@ -251,7 +250,6 @@ html{ scroll-behavior: smooth;}
     text-decoration: none;
 }
 
-
 /* Fim Header */
 
 
@@ -264,26 +262,85 @@ html{ scroll-behavior: smooth;}
     align-items: center;
 }
 
-.summoners {
+.summoners2 {
  height: 90vh;
 }
 
 
+/* COMEÇO FUNDO 2 */
+
+.fundo2 {
+width: 100vw;
+height: 100vh; 
+background-color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.filha {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
 
 
+.topbtn {
+    margin-right: 5vw;
+}
+
+.topimg {
+    width: 9vw;
+    height: 18vh;
+}
+
+.midbtn {
+    margin-right: 5vw;
+}
+
+.midimg {
+    width: 9vw;
+    height: 18vh;
+}
+
+.jgbtn {
+    margin-right: 5vw;
+}
+
+.jgimg {
+    width: 9vw;
+    height: 18vh;
+}
+
+.adcbtn {
+    margin-right: 5vw;
+}
+
+.adcimg {
+    width: 9vw;
+    height: 18vh;
+}
+
+.supimg {
+    width: 9vw;
+    height: 18vh;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+.filha2 {
+    width: 70vw;
+    height: 50vh;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 10px 5px 5px rgb(49, 47, 47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
   /* FOOTER */ 
 
   .footer {

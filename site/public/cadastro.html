@@ -7,7 +7,7 @@
     <title>LOL</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="css/cadastro.css">
-    <script src='main.js'></script>
+    <!-- <script src='main.js'></script> -->
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
             <ul class="navbar">
                 <div class="homeindex">
-                    <li class="refhome1"> <a class="refhomeee" href="index1.html">  Home </a> </li>
+                    <li class="refhome1"> <a class="refhomeee" href="index.html">  Home </a> </li>
                 </div>
                 <li class="summoners"> <a class="refsobrenos" href="summonersrift.html"> Summoners Rift </a> </li>
                 <li class="teamfight"> <a href="Teamfight.html" class="homesimulador"> Teamfight Tactics </a>
@@ -74,7 +74,7 @@
         <span class="tipo_campo">Confirmação da Senha:</span>
         <input id="confirmacao_senha_input" class="caixa" type="password" placeholder="******">
         <br>
-        <select class="select_champ">
+        <select id="select_champ">
             <option hidden value="">  Escolha um campeão </option>
             <option value="Jax"> Jax </option>
             <option value="Viktor"> Viktor </option>
@@ -93,7 +93,8 @@
         </P>
         <input id="captcha" placeholder="Coloque o resultado:"> 
         
-
+        <div id="erro"> </div>
+      
 
     </div>
     <br>
@@ -114,22 +115,25 @@
 
     <script>
         function cadastrar() {
-            aguardar();
+            // aguardar();
     
             //Recupere o valor da nova input pelo nome do id
             // Agora vá para o método fetch logo abaixo
             var nomeVar = nome_input.value;
             var emailVar = email_input.value;
             var senhaVar = senha_input.value;
-            var captchaVar = Number(captcha.value)
-            var campeaoVar = campeao_input.value;
+            var captchaVar = Number(captcha.value);
+            var campeaoVar = select_champ.value;
             var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    
+
+
+
+         
             if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || campeaoVar == "") && (captchaVar != 25)) {
-                cardErro.style.display = "block"
-                mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+                // cardErro.style.display = "block"
+                erro.innerHTML = 'Preencha todos os campos'
     
-                finalizarAguardar();
+                // finalizarAguardar();
                 return false;
             }
             else {
@@ -154,29 +158,29 @@
                 console.log("resposta: ", resposta);
     
                 if (resposta.ok) {
-                    cardErro.style.display = "block";
+                    // cardErro.style.display = "block";
     
-                    mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
     
                     setTimeout(() => {
                         window.location = "login.html";
                     }, "2000")
                     
                     limparFormulario();
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
-                finalizarAguardar();
+                // finalizarAguardar();
             });
     
             return false;
         }
     
         function sumirMensagem() {
-            cardErro.style.display = "none"
+            // cardErro.style.display = "none"
         }
     
     </script>

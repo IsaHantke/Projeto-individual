@@ -54,13 +54,38 @@
 
 <div class="fundo1">
 
-    <img class="summoners" src="assets/summoners.png"> 
+    <img class="summoners2" src="assets/summoners.png"> 
 
 </div>
 
 
     <!-- FINAL  FUNDO 1-->
 
+    
+<!-- COMEÇO FUNDO 2 -->
+
+<div class="fundo2">
+    
+<div class="filha">
+<button onclick="topbtn()" class="topbtn"> <img class="topimg" src="https://static.wikia.nocookie.net/leagueoflegends/images/e/ef/Top_icon.png/revision/latest?cb=20181117143602"> </button>
+
+<button onclick="midbtn()" class="midbtn"> <img class="midimg" src="https://static.wikia.nocookie.net/leagueoflegends/images/9/98/Middle_icon.png/revision/latest?cb=20181117143644"> </button>
+
+<button onclick="jgbtn()" class="jgbtn"> <img class="jgimg" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2ec970f4-1706-4915-9a93-41f3d9c8202c/degndao-3803ac5c-8d3b-4205-bdac-17e03fb712dd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJlYzk3MGY0LTE3MDYtNDkxNS05YTkzLTQxZjNkOWM4MjAyY1wvZGVnbmRhby0zODAzYWM1Yy04ZDNiLTQyMDUtYmRhYy0xN2UwM2ZiNzEyZGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dl2fyLAB4_80akvDhBoZ-4w7eforvxOeLLeqT1Jx2G4"> </button>
+
+<button onclick="adcbtn()" class="adcbtn"> <img class="adcimg" src="https://static.wikia.nocookie.net/leagueoflegends/images/9/97/Bottom_icon.png/revision/latest?cb=20181117143632"> </button>
+
+<button onclick="supbtn()" class="supbtn"> <img class="supimg" src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e0/Support_icon.png/revision/latest/scale-to-width-down/50?cb=20181117143601"> </button>
+</div>
+
+<div class="filha2">
+    
+<p id="p_rotas"> Clique nos ícones</p>
+</div>
+
+</div>
+
+<!-- Final FUNDO 2-->
 
     <!-- FOOTER-->
     <div class="footer"> 
@@ -76,3 +101,28 @@
 
 </body>
 </html>
+
+<script>
+    function topbtn() {
+        
+        p_rotas.innerHTML = " &nbsp; &nbsp; Devido à prioridade do Dragão, esta posição tende a ficar isolada do resto da equipa. Os campeões ideais para esta posição são em grande <br> &nbsp; &nbsp; &nbsp; &nbsp; parte autossuficientes com ferramentas para dominar em duelos, escalar pela agricultura ou impactar o mapa de outras maneiras."
+}
+
+    function midbtn() {
+        p_rotas.innerHTML= " &nbsp; &nbsp; A faixa do meio fornece a receita mais rápida de ouro e experiência devido à sua curta distância. O espaço menor da pista também é atraente <br> &nbsp; &nbsp; &nbsp; para campeões com defesa ruim (por exemplo , magos ) para recuar facilmente para a segurança sob a torre. Estando no centro do mapa, esta <center> posição tem fácil acesso a outros setores semelhantes ao Jungler. </center>"
+    }
+
+    function jgbtn() {
+        p_rotas.innerHTML = " <center> Esta posição oferece um caminho seguro para obter ouro e experiência através de acampamentos na selva, sem muita interferência dos oponentes. </center> <center>  Devido aos acampamentos espalhados pelo mapa, o jogador pode circular livremente pelo mapa para influenciar as pistas e garantir objetivos. </center> "
+    }
+
+    function adcbtn() {
+        p_rotas.innerHTML = " <center> Devido à prioridade do Dragão, o Suporte tende a priorizar o controle desta pista sobre as outras. Os campeões ideais para a posição inferior podem otimizar a presença do Suporte durante toda a fase de rotas. </center>"
+    }
+
+    function supbtn() {
+        p_rotas.innerHTML = " <center> A posição de suporte tende a adotar uma abordagem passiva à geração de ouro em favor de canalizar a renda ativa para outras posições. O jogador teria sucesso principalmente ao fornecer segurança ou matar potencial para sua equipe. Este objetivo é melhor executado em uma pista lateral devido à proximidade com os oponentes e à área ampla sendo difícil para eles escaparem. </center>"
+    }
+
+
+</script>
