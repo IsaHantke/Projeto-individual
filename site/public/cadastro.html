@@ -74,18 +74,13 @@
         <span class="tipo_campo">Confirmação da Senha:</span>
         <input id="confirmacao_senha_input" class="caixa" type="password" placeholder="******">
         <br>
-        <select id="select_champ">
-            <option hidden value="">  Escolha um campeão </option>
-            <option value="Jax"> Jax </option>
-            <option value="Viktor"> Viktor </option>
-            <option value="Thresh"> Thresh </option>
-            <option value="Master yi"> Master yi </option>
-            <option value="Ashe"> Ashe </option>
-            <option value="Shaco"> Shaco </option>
-            <option value="Nasus"> Nasus</option>
-            <option value="Zoe"> Zoe </option>
-            <option value="Le Blanc"> Le Blanc</option>
-            <option value="Miss Fortune"> Miss Fortune</option>
+        <select id="select_rota">
+            <option hidden value="">  Escolha uma rota </option>
+            <option value="1"> Top </option>
+            <option value="2"> Mid </option>
+            <option value="3"> Jungle </option>
+            <option value="4"> Adc </option>
+            <option value="5"> Suporte </option>
         </select>
 
         <p> Você é um robô? <br> 
@@ -123,13 +118,13 @@
             var emailVar = email_input.value;
             var senhaVar = senha_input.value;
             var captchaVar = Number(captcha.value);
-            var campeaoVar = select_champ.value;
+            var rotaVar = select_rota.value;
             var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
 
 
          
-            if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || campeaoVar == "") && (captchaVar != 25)) {
+            if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || rotaVar == "") && (captchaVar != 25 || captchaVar == "")) {
                 // cardErro.style.display = "block"
                 erro.innerHTML = 'Preencha todos os campos'
     
@@ -151,7 +146,9 @@
                     // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nomeVar,
                     emailServer: emailVar,
-                    senhaServer: senhaVar
+                    senhaServer: senhaVar,
+                    rotaServer: rotaVar,
+                    confirmacaoSenhaServer: confirmacaoSenhaVar,
                 })
             }).then(function (resposta) {
     
