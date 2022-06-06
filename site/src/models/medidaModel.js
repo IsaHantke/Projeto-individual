@@ -14,10 +14,11 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select rota.nome, count(usuario.idlogin) as qtdvotos 
-        from rota 
-        join Usuario 
-        on fkrota=idrota group by rota.nome;`;
+        instrucaoSql = `select rota.nome, round((count(usuario.idlogin) / t.total * 100), 1) as porcentagem, 
+        count(fkrota) as id 
+        from rota join Usuario on fkrota=idrota ,
+        (select count(fkrota) as total from Usuario) t
+        group by rota.nome;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -38,13 +39,14 @@ function buscarMedidasEmTempoReal(idAquario) {
                         CONVERT(varchar, momento, 108) as momento_grafico, 
                         fk_aquario 
                         from medida where fk_aquario = ${idAquario} 
-                    order by id desc`;
+                    order by id desc;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select rota.nome, count(usuario.idlogin) as qtdvotos 
-        from rota 
-        join Usuario 
-        on fkrota=idrota group by rota.nome;`;
+        instrucaoSql = `select rota.nome, round((count(usuario.idlogin) / t.total * 100), 1) as porcentagem, 
+        count(fkrota) as id 
+        from rota join Usuario on fkrota=idrota ,
+        (select count(fkrota) as total from Usuario) t
+        group by rota.nome;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

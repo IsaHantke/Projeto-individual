@@ -84,7 +84,7 @@
         </select>
 
         <p> Você é um robô? <br> 
-              5 x 5 = ?
+              <span id="cap1"> </span> x <span id="cap2"> </span> = ?
         </P>
         <input id="captcha" placeholder="Coloque o resultado:"> 
         
@@ -109,6 +109,13 @@
     </html>
 
     <script>
+        var num1 = Number(parseInt(Math.random()*10))
+        var num2 = Number(parseInt(Math.random()*10))
+        var result = num1 * num2
+
+        cap1.innerHTML = num1
+        cap2.innerHTML = num2
+
         function cadastrar() {
             // aguardar();
     
@@ -124,7 +131,7 @@
 
 
          
-            if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || rotaVar == "") && (captchaVar != 25 || captchaVar == "")) {
+            if ((nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || rotaVar == "" || captchaVar != result || captchaVar == "")) {
                 // cardErro.style.display = "block"
                 erro.innerHTML = 'Preencha todos os campos'
     

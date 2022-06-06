@@ -77,7 +77,10 @@
                 
                 <div class="grafico">
                     <canvas id="myChart"></canvas>
+
+                    <canvas style="margin-top: 8vh ;" id="myChart2"></canvas>
                   </div>
+
                   
         </div>
 
@@ -202,18 +205,10 @@
                 labels: [],
                 datasets: [
                     {
-                        yAxisID: 'y-umidade',
-                        label: 'Umidade',
-                        borderColor: '#32B9CD',
-                        backgroundColor: '#32b9cd8f',
-                        fill: true,
-                        data: []
-                    },
-                    {
-                        yAxisID: 'y-temperatura',
+                        yAxisID: 'y-id',
                         label: 'Popularidade',
                         borderColor: '#FFF',
-                        backgroundColor: '#32b9cd8f',
+                        backgroundColor: '#741a2d',
                         fill: true,
                         data: []
                     }
@@ -224,7 +219,7 @@
                 var registro = resposta[i];
                 dados.labels.push(registro.nome);
                 // dados.datasets[0].data.push(registro.umidade);
-                dados.datasets[1].data.push(registro.qtdvotos);
+                dados.datasets[0].data.push(registro.id);
             }
     
             console.log(JSON.stringify(dados));
@@ -246,26 +241,63 @@
                             type: 'linear',
                             display: true,
                             position: 'left',
-                            id: 'y-temperatura',
+                            id: 'y-id',
                             ticks: {
                                 beginAtZero: true,
                                 max: 100,
                                 min: 0
                             }
-                        }, {
+                        }],
+                    }
+                }
+            });
+
+            var dados2 = {
+                labels: [],
+                datasets: [
+                    {
+                        yAxisID: 'y-porcentagem',
+                        label: 'Popularidade',
+                        borderColor: '#FFF',
+                        backgroundColor: '#741a2d',
+                        fill: true,
+                        data: []
+                    }
+                ]
+            };
+    
+            for (i = 0; i < resposta.length; i++) {
+                var registro = resposta[i];
+                dados2.labels.push(registro.nome);
+                // dados.datasets[0].data.push(registro.umidade);
+                dados2.datasets[0].data.push(registro.porcentagem);
+            }
+    
+            console.log(JSON.stringify(dados2));
+    
+            var ctx2 = myChart2.getContext('2d');
+            window.grafico_linha2 = Chart.Doughnut(ctx2, {
+                data: dados2,
+                options: {
+                    responsive: true,
+                    animation: { duration: 500 },
+                    hoverMode: 'index',
+                    stacked: false,
+                    title: {
+                        display: false,
+                        text: 'Dados capturados'
+                    },
+                    scales: {
+                        yAxes: [{
                             type: 'linear',
-                            display: false,
-                            position: 'right',
-                            id: 'y-umidade',
+                            display: true,
+                            position: 'left',
+                            id: 'y-Porcentagem',
                             ticks: {
                                 beginAtZero: true,
                                 max: 100,
                                 min: 0
-                            },
-    
-                            gridLines: {
-                                drawOnChartArea: false,
-                            },
+                            }
                         }],
                     }
                 }
