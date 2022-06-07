@@ -1,0 +1,374 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* fazer ele rolar para baixo devagar*/ 
+html{ scroll-behavior: smooth;}
+/* COMEÇO DA HEADER */
+
+.header {
+    width: 100vw;
+    height: 12vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.4vh solid #ffffff;
+    
+}
+
+
+
+
+.container {
+    width: 85%;
+    display: flex;
+   
+ }
+
+ .div_logohog {
+     width: 50vw;
+     height: 11vh;
+     margin-left: 1vw;
+   
+ }
+
+ .div_logohog .img1 {
+     width: 15vw;
+     height: 11vh;   
+ }
+
+ .header .container {
+     justify-content: center;
+     align-items: center ;
+     height: 100vh;
+ }
+
+ .navbar {
+     color: #a0a0a0;
+     list-style: none;
+     width: 80vw;
+     height: 50vh;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     letter-spacing: 0.02vw;
+     font-size: 2vh;
+     margin-left: 5vw;
+    
+}   
+
+/* aquela linha debaixo do menu quando passamos o mouse */
+
+.teamfight::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    
+}
+
+.homesimulador:hover {
+    color: white;
+}
+
+.teamfight:hover::after {
+    width: 100%;
+}
+
+.refcontato::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.refcontato:hover {
+    color: white;
+}
+
+.refcontato:hover::after {
+    width: 100%;
+}
+
+.refhome1::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.refhome1:hover {
+    color: white;
+}
+
+.refhome1:hover::after {
+    width: 100%;
+}
+
+.refsobrenos::after {
+    content: "";
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 0.2vh;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+/* para ele iluminar quando passa o mouse */
+
+.refsobrenos:hover {
+    color: white;
+}
+.refsobrenos:hover::after {
+    width: 100%;
+}
+
+
+
+/* FIM da linha animada */
+
+.navbar li {
+     margin-right: 4vw;
+     font-weight: bold;
+}
+
+
+
+.navbar .login {
+    margin-right: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .login:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.login {
+    width: 4vw;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5vw;
+    border: 0.4vh solid white;
+    border-radius: 8vh;
+    
+}
+
+.reflogin {
+    color: white;
+    text-decoration: none;
+}
+
+.reflogin:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.refcontato {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.refsobrenos {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.navbar .cadastro {
+    display: flex;
+    align-items: center;
+}
+
+.cadastro {
+    width: 4vw;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1.9vh;
+    padding-right: 1.9vh;
+    border: 0.4vh solid white;
+    border-radius: 8vh;
+    text-decoration: none;
+    margin-right: 2vw;
+}
+.navbar .summoners:hover {
+     transform: scale(1.06);
+     transition: 0.5s;
+}
+
+.navbar .teamfight:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.navbar .competitivo:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.navbar .refhome1:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+.navbar .cadastro:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+
+.refcadastro {
+    color: white;
+    text-decoration: none;
+}
+
+.refhomeee {
+    text-decoration: none;
+}
+
+
+
+.homesimulador {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+/* Final header  */
+
+.fundo1 {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img5 {
+    width: 100vw;
+    height: 70vh;
+   
+    position: relative;
+    border-top: #ffffff solid 2px;
+}
+
+.pain {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pain2 {
+    width: 50vw;
+    height: 75vh;
+}
+
+.pain3 {
+    width: 50vw;
+    height: 75vh;
+    padding: 20px;
+    
+}
+
+.text1 {
+    padding-top: 15vh;
+}
+
+.img2 {
+    width: 50vw;
+    border-top: solid black 0.5vh ;
+}
+
+
+
+.red {
+    width: 100vw;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.red1{
+    width: 50vw;
+    height: 75vh;
+    padding: 20px;
+}
+
+.red2 {
+    width: 50vw;
+    height: 75vh;
+}
+
+.img3 {
+    width: 50vw;
+    height: 75vh;
+}
+
+.text2 {
+    margin-top: 15vh;
+}
+
+.img7{
+    width: 50vw;
+    height: 75vh;
+}
+
+.flamengo {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */ 
+
+.footer {
+    width: 100vw;
+    height: 35vh;
+    padding: 0;
+    margin-top: 5vh;
+    background-color:#e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redessociais {
+    width: 15vw;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insta {
+    width: 20vh;
+    height: 7vh;
+    border-radius: 2vh;
+}
